@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "Lulo Clean";
+  src: url(../font/luloclean.ttf);
+}
+
+* {
+  font-family: "Lulo Clean";
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: fit-content;
+  color: white;
+
+  overflow-y: auto;
+  overflow-x: none;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../img/bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  background-color: #36f3d2;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  border-radius: 20px;
+  width: 180px;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #8efbe9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px 30px 40px;
+}
+
+.logo {
+  display: flex;
+  height: 100px;
+}
+
+.logo h3 {
+  align-self: center;
+  color: #36f3d2;
+  font-size: 25px;
+  text-shadow: rgb(0 0 0 / 60%) 0px 4px 8px;
+  white-space: nowrap;
+  margin-left: 30px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul li {
+  margin-left: 30px;
+}
+
+.nav ul li button {
+  height: 55px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-inputs {
+  display: flex;
+}
+
+.form-field {
+  display: inherit;
+}
+
+.form-field * {
+  height: 55px;
+  margin: 25px;
+}
+
+.form-field input {
+  width: 270px;
+  font-size: 15px;
+  text-align: right;
+}
+
+.form-field select {
+  min-width: 200px;
+  font-size: 15px;
+}
+
+.form-field input:focus {
+  outline: none;
+}
+
+.alert_list {
+  position: fixed;
+
+  right: 30px;
+  bottom: 30px;
+}
+
+.alert_list > * {
+  width: 300px;
+  padding: 15px 20px;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+
+  background-color: rgb(182, 54, 45);
+}
+
+.alert_success {
+  background-color: rgb(41, 168, 41);
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader.active {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.loader > img {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#btn_connect.connected {
+  background-color: rgb(255, 176, 176);
+}
